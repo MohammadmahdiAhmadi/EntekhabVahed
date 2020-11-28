@@ -1,0 +1,40 @@
+
+{% load static %}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" 
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+
+
+{% if latest_lesson_list %}
+    {% for lesson in latest_lesson_list %}
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{ lesson.lessonName }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{lesson.teacherName.name}}</h6>
+                <p class="card-text">Mian term date: {{lesson.mianTermDate}}</p>
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+            </div>
+        </div>
+    {% endfor %}
+{% else %}
+    <p>No lessons are available.</p>
+{% endif %}
+
+
+
+
+
+{% comment %} {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'mainApp/style.css' %}">
+
+{% if latest_lesson_list %}
+    <ul>
+    {% for lesson in latest_lesson_list %}
+        <li>{{ lesson.lessonName }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No lessons are available.</p>
+{% endif %}  {% endcomment %}
