@@ -15,3 +15,12 @@ class LessonsView(generic.ListView):
         return Lesson.objects.all()
 
 
+def vote(request, lesson_id):
+    lesson = get_object_or_404(Lesson, pk=lesson_id)
+    selected_like = lesson.get(pk=request.POST['lesson'])
+    lesson.like = 222
+    selected_like.like = 111
+    selected_like.save()
+
+
+
