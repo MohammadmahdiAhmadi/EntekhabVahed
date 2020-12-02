@@ -51,9 +51,11 @@ class Lesson(models.Model):
     def __str__(self):
         return self.lessonName
 
-    # def liked(self):
-    #     self.like = 111
-    #     return self.like
+
+    # def liking(self):
+    #     self.like += 1
+    #     self.save()
+
 
 
 
